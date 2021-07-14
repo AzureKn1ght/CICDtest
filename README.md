@@ -6,7 +6,7 @@ My first CI/CD workflow test using GitHub Actions and GitHub Pages. You can find
 This project was built using [Angular](https://angular.io/) and [Ionic](https://ionicframework.com/) Framework, and deployed to GitHub Pages using an automated workflow enabled by GitHub Actions. The app can also be downloaded locally and compiled for iOS and Android using [Capacitor](https://capacitorjs.com/). 
 
 ## CI/CD Workflow
-This repository my first attempt at building an automated CI/CD workflow for and Angular web app project using GitHub Actions and GitHub Pages. The full workflow file can be found in the YAML file [.github/workflows/main.yml](.github/workflows/main.yml) and will be described in detail below. 
+This repository is my first attempt at building an automated CI/CD workflow for and Angular web app project using GitHub Actions and GitHub Pages. The full workflow can be found in the YAML file [.github/workflows/main.yml](.github/workflows/main.yml) and will be described in detail below. 
 
 
 ### 1. Defining the Workflow
@@ -19,7 +19,7 @@ This repository my first attempt at building an automated CI/CD workflow for and
 		   
 	workflow_dispatch:
 
-The first statement definies the name of the workflow. The next part specifies when the workflow shall run. I this case, it will run whenever there is a "push" or a "pull_request" to the "master" branch only. The last statement also allows for the workflow to be triggered manually from the Actions tab in GitHub. 
+The first statement defines the name of the workflow. The next part specifies when the workflow shall run. In this case, it will run whenever there is a "push" or a "pull_request" to the "master" branch only. The last statement also allows for the workflow to be triggered manually from the Actions tab in GitHub. 
 
 ### 2. Defining the Jobs 
 	jobs:
@@ -45,7 +45,9 @@ There are two steps in this particular job. The first step called "Checkout" sim
 		        deploy_branch: gh-pages  
 		        angular_dist_build_folder: www 
 		        
-The second step of this job called "Angular Build and Deploy" uses the action [AhsanAyaz/angular-deploy-gh-pages-actions](https://github.com/marketplace/actions/angular-deploy-gh-pages-actions) courtesy of [AhsanAyaz](https://github.com/AhsanAyaz) on the GitHub Actions marketplace. It takes in the "github_access_token" provided using the "secrets.GITHUB_TOKEN" for access, and builds the Angular code for deployment. The "base_href" is required to correspond to the format of "https://{your_username}.github.io/{base_href}/" for the Angular build to work correctly. The code is complied from the "angular_dist_build_folder" which is the "www" folder for this project, as specified in the "[angular.json](angular.json)" file. 
+The second step of this job called "Angular Build and Deploy" uses the action [AhsanAyaz/angular-deploy-gh-pages-actions](https://github.com/marketplace/actions/angular-deploy-gh-pages-actions) courtesy of [AhsanAyaz](https://github.com/AhsanAyaz) on the GitHub Actions marketplace. It takes in the "github_access_token" provided using the "secrets.GITHUB_TOKEN" for access, and builds the Angular code for deployment. 
+
+The "base_href" is required to correspond to the format of "https://{your_username}.github.io/{base_href}/" for the Angular build to work correctly. The code is complied from the "angular_dist_build_folder" which is the "www" folder for this project, as specified in the "[angular.json](angular.json)" file. 
 
 Finally, when the build is one, it will be deployed to the "deploy_branch" called "gh-pages", which is the branch of this repository configured for GitHub Pages. The live website will thus be available at: [https://azurekn1ght.github.io/CICDtest/](https://azurekn1ght.github.io/CICDtest/)
 

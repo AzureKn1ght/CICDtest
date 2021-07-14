@@ -14,7 +14,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains 2 jobs called "Build and Test" and "Deploy"
+  # This workflow contains 1 job called "Build and Deploy"  
   build:
     name: Build and Deploy
     # The type of runner that the job will run on
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v2
-
+        # Angular deploy to GitHub Pages
       - name: Angular Build and Deploy
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:

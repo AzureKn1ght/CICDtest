@@ -49,5 +49,5 @@ The second step of this job called "Angular Build and Deploy" uses the action [A
 
 The "base_href" is required to correspond to the format of "https://{your_username}.github.io/{base_href}/" for the Angular build to work correctly. The code is complied from the "angular_dist_build_folder" which is the "www" folder for this project, as specified in the "[angular.json](angular.json)" file. 
 
-Finally, when the build is one, it will be deployed to the "deploy_branch" called "gh-pages", which is the branch of this repository configured for GitHub Pages. The live website will thus be available at: [https://azurekn1ght.github.io/CICDtest/](https://azurekn1ght.github.io/CICDtest/)
+Finally, when the build is done, it will be deployed to the "deploy_branch" called "gh-pages", which is the branch of this repository configured for GitHub Pages. The live website will thus be available at: [https://azurekn1ght.github.io/CICDtest/](https://azurekn1ght.github.io/CICDtest/)
 

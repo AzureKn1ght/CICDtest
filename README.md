@@ -1,7 +1,7 @@
 # CI/CD Test App
 My first CI/CD workflow test using GitHub Actions and GitHub Pages. You can find the live version of the deployed website here: [https://azurekn1ght.github.io/CICDtest/](https://azurekn1ght.github.io/CICDtest/)
 
-![](screenshot.png)
+<p align=center><img src="screenshot.png" height="600"></p>
 
 This project was built using [Angular](https://angular.io/) and [Ionic](https://ionicframework.com/) Framework, and deployed to GitHub Pages using an automated workflow enabled by GitHub Actions. The app can also be downloaded locally and compiled for iOS and Android using [Capacitor](https://capacitorjs.com/). 
 
